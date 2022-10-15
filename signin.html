@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="signin_wrapper">
+        <div class="image_wrapper">
+            <img src="assets/Group 3.png" alt="">
+        </div>
+        
+        <div class="login-container">
+            <div class="login_wrapper">
+                <h1>Sign In</h1>
+                <p>User Name</p>
+                
+                <div class="signin-flex">
+                    <input type="text" name="username" placeholder="username" id="userLogin">
+                    <img src="assets/email.svg" alt="">
+                </div>
+                
+                <p>Password</p>
+                
+                <div class="signin-flex">    
+                    <input type="password" name="username" placeholder="password" id="passwordLogin">
+                    <img src="assets/key-fill.svg" alt="">
+                </div>
+                
+                <button onclick="auth.login()">Login</button>
+                <span>Are you new here? <a href="signup.html">Sign up</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="scripts/index.js"></script>
+<script src="scripts/auth.js"></script>
+</html>
