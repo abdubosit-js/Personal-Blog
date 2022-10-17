@@ -1,5 +1,5 @@
 class App {
-    baseUrl = "http://10.10.5.245:8000"
+    baseUrl = "http://142.93.246.144"
 
     async fetchApi(url, method, data) {
         const config = {

@@ -4,18 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="signup_wrapper">
-        <h1>Sign Up</h1>
-        <input type="text" name="username" placeholder="username..." id="user">
-        <input type="password" name="username" placeholder="password..." id="password">
-        <input type="password" name="username" placeholder="confirmPassword..." id="confirmPassword">
-        <button onclick="auth.signup()">submit</button>
+    <div class="signup-container_flex">
+        <div class="signup-container">
+            <div class="signup_wrapper">
+                <h1>Sign Up</h1>
+                <p>User Name</p>
+                
+                <div class="signup-flex name">
+                    <input type="text" name="username" placeholder="username" onkeyup="auth.renderInputErrorName(event)" id="user">
+                    <img src="assets/email.svg" alt="">
+                </div>
+
+                <p>Password</p>
+                
+                <div class="signup-flex password">
+                    <input type="password" name="username" placeholder="password" onkeyup="auth.renderInputErrorPass(event)" id="password">
+                    <img src="assets/key-fill.svg" alt="">
+                </div>
+                
+                <p>Confirm Password</p>
+                
+                <div class="signup-flex confirmPassword">
+                    <input type="password" name="username" placeholder="confirmPassword" onkeyup="auth.renderInputError(event)" id="confirmPassword">
+                    <img src="assets/key-fill.svg" alt="">
+                </div>
+
+                <div class="check-box">
+                    <input type="checkbox" name="" onclick="auth.viewPassword()" id="">
+                    View Password
+                </div>
+                
+                <button id="button-submit" onclick="auth.signup()">Sign Up</button>
+            </div>
+        </div>
+        
+        <div class="image_wrapper">
+            <img src="assets/Group 3.png" alt="">
+        </div>
     </div>
 </body>
-
 <script src="scripts/index.js"></script>
 <script src="scripts/auth.js"></script>
 </html>

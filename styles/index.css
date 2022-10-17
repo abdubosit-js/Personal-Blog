@@ -5,6 +5,179 @@
           box-sizing: border-box;
 }
 
+.signup-container_flex {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: sans-serif;
+}
+
+.signup-container_flex .image_wrapper {
+  background-color: #0000ff50;
+  padding: 40px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signup-container_flex .image_wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.signup-container_flex .signup-container {
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 40px;
+}
+
+.signup-container_flex .signup-container .signup_wrapper {
+  width: 100%;
+  max-width: 417px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+
+.signup-container_flex .signup-container .signup_wrapper p {
+  font-weight: 500;
+}
+
+.signup-container_flex .signup-container .signup_wrapper h1 {
+  text-align: center;
+}
+
+.signup-container_flex .signup-container .signup_wrapper .check-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 7px;
+  color: gray;
+}
+
+.signup-container_flex .signup-container .signup_wrapper .check-box input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.signup-container_flex .signup-container .signup_wrapper .signup-flex {
+  position: relative;
+  max-width: 417px;
+  height: 45px;
+  background: #FFFFFF;
+  border: 2px solid #7EBCC3;
+  border-radius: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.signup-container_flex .signup-container .signup_wrapper .signup-flex input {
+  width: 100%;
+  padding: 0 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.signup-container_flex .signup-container .signup_wrapper .signup-flex img {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.signup-container_flex .signup-container .signup_wrapper span {
+  margin: auto;
+  font-weight: 500;
+}
+
+.signup-container_flex .signup-container .signup_wrapper span a {
+  color: #7EBCC3;
+  text-decoration: none;
+}
+
+.signup-container_flex .signup-container .signup_wrapper button {
+  background-color: #7EBCC3;
+  color: #FFFFFF;
+  border: none;
+  height: 40px;
+  border-radius: 7px;
+  font-size: 15px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.signup-container_flex .signup-container .signup_wrapper button :disabled {
+  background-color: aquamarine;
+}
+
+.signup-container_flex .signup-container .signup_wrapper button:hover {
+  background-color: #5ba7af;
+}
+
+.signup-container_flex .signup-container .signup_wrapper button:active {
+  background-color: #44b1bd;
+}
+
+@media (max-width: 800px) {
+  .signup-container_flex {
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+  }
+  .signup-container_flex .image_wrapper {
+    padding: 0 40px;
+    background-color: #FFFFFF;
+  }
+  .signup-container_flex .signup-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .signup_wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .signup_wrapper .image_wrapper {
+    padding: 0 40px;
+    background-color: #FFFFFF;
+  }
+  .signup_wrapper .signup-container {
+    margin-top: -90px;
+    width: 100%;
+    padding: 0 40px;
+  }
+}
+
 .signin_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
