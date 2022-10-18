@@ -11,7 +11,7 @@ class Product extends App {
             div.insertAdjacentHTML("beforeend", `
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="display: flex;">
                         <img src="${this.baseUrl + "/" + product.image}" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">

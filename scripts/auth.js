@@ -33,7 +33,6 @@ class Auth extends App {
         }
 
         const login = await this.fetchApi("/login", 'POST', data)
-        // console.log(login.token)
         localStorage.setItem("token", login.token)
 
         if (Boolean(localStorage.getItem("token"))) {
@@ -84,13 +83,17 @@ class Auth extends App {
         }    
     }
 
+    logout() {
+        localStorage.removeItem("token")
+    }
+
     headerFunc() {
         const header = document.querySelector("header")
 
         header.insertAdjacentHTML("beforeend", `
         <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#">Personal Blog</a>
+            <a class="navbar-brand" href="index.html">Personal Blog</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -100,18 +103,28 @@ class Auth extends App {
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="addtodos.html">add Todos</a>
+                        <a class="nav-link" href="addtodos.html">create Todo</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
+                ${Boolean(localStorage.getItem("token")) ? `
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="signup.html">sign up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signin.html">sign in</a>
+                        <li class="nav-item" onclick="auth.logout()">
+                            <a class="nav-link active" aria-current="page" href="index.html">logout</a>
                         </li>
                     </ul>
+                ` :
+                    `
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="signup.html">sign up</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="signin.html">sign in</a>
+                            </li>
+                        </ul>
+                    `
+                }
                 </form>
             </div>
             </div>
