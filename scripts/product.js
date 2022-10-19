@@ -19,9 +19,11 @@ class Product extends App {
                         <div class="card-body">
                             <h5 class="card-title">${product.title}</h5>
                             <p class="card-text">${product.description}</p>
-                            <p class="card-text"><small class="text-muted">${"0" +date.getDay() + ".0" + date.getMonth() + "." + date.getFullYear()}</small></p>
+                            <div class="fl"> 
+                                <p class="card-text"><small class="text-muted">${"0" +date.getDay() + ".0" + date.getMonth() + "." + date.getFullYear()}</small></p>
+                                <button data-id=${product._id} onclick="product.modal(event)">delete</buttton>
+                            </div>
                         </div>
-                        <button data-id=${product._id} onclick="product.modal(event)">delete</buttton>
                     </div>
                 </div>
             </div>
@@ -33,7 +35,7 @@ class Product extends App {
 
     async deleted(e) {
         const id = e.target.dataset.id
-        const deleted = await this.fetchApi(`/todos/${id}`, "DELETE")
+        const deleted = await this.fetchApi(`/todos/${id}`, "DELETE").then(res => window.location.href = "index.html")
     }
 
     modal(e) {
@@ -44,9 +46,11 @@ class Product extends App {
             <div class="myModal">
                 <div class="modal-center">
                     <div class="flex-modal">
-                        <h1>ochrilsinmi!</h1>
-                        <button onclick="product.close()">no</button>
-                        <button data-id="${id}" onclick="product.deleted(event)">yes</button>
+                        <h4>Do you really want to delete it?</h4>
+                        <div>
+                            <button onclick="product.close()">no</button>
+                            <button data-id="${id}" onclick="product.deleted(event)">yes</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -55,7 +59,7 @@ class Product extends App {
 
     close() {
         const modal = document.querySelector(".myModal")
-        modal.style.display = "none"
+        modal.remove()
     }
 }
 

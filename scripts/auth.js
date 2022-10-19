@@ -45,9 +45,7 @@ class Auth extends App {
     async addTodos(event) {
         event.preventDefault();
         const formData = new FormData(event.target) 
-
-        const todos = await this.fetchApi("/todos", 'POST', formData)
-        console.log(formData)
+        const todos = await this.fetchApi("/todos", 'POST', formData).then(res => window.location.href = 'index.html')
     }
 
     renderInputError(e) {
