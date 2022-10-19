@@ -10,7 +10,7 @@ class App {
             }
         } 
 
-        if (method === 'POST') {
+        if (method === 'POST' || method === 'DELETE') {
             let body = JSON.stringify(data)
 
             if (data instanceof FormData) {

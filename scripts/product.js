@@ -8,6 +8,7 @@ class Product extends App {
         products.forEach(product => {
             const div = document.createElement('div')
             const date = new Date(product.createdDate)
+
             div.insertAdjacentHTML("beforeend", `
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
@@ -20,6 +21,7 @@ class Product extends App {
                             <p class="card-text">${product.description}</p>
                             <p class="card-text"><small class="text-muted">${"0" +date.getDay() + ".0" + date.getMonth() + "." + date.getFullYear()}</small></p>
                         </div>
+                        <button data-id=${product._id} onclick="product.modal(event)">delete</buttton>
                     </div>
                 </div>
             </div>
@@ -27,6 +29,33 @@ class Product extends App {
             fragment.append(div)
         });
         todo.append(fragment)
+    }
+
+    async deleted(e) {
+        const id = e.target.dataset.id
+        const deleted = await this.fetchApi(`/todos/${id}`, "DELETE")
+    }
+
+    modal(e) {
+        const id = e.target.dataset.id
+        const body = document.body
+
+        body.insertAdjacentHTML("beforeend", `
+            <div class="myModal">
+                <div class="modal-center">
+                    <div class="flex-modal">
+                        <h1>ochrilsinmi!</h1>
+                        <button onclick="product.close()">no</button>
+                        <button data-id="${id}" onclick="product.deleted(event)">yes</button>
+                    </div>
+                </div>
+            </div>
+        `)
+    }
+
+    close() {
+        const modal = document.querySelector(".myModal")
+        modal.style.display = "none"
     }
 }
 
