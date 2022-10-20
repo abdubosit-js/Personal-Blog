@@ -13,7 +13,7 @@ class Product extends App {
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4" style="display: flex;">
-                        <img src="${this.baseUrl + "/" + product.image}" class="img-fluid rounded-start" alt="...">
+                        <img src="${this.baseUrl + "/" + product.image}" class="img-fluid rounded-start" style="object-fit: cover;" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -21,7 +21,7 @@ class Product extends App {
                             <p class="card-text">${product.description}</p>
                             <div class="fl"> 
                                 <p class="card-text"><small class="text-muted">${"0" +date.getDay() + ".0" + date.getMonth() + "." + date.getFullYear()}</small></p>
-                                <button data-id=${product._id} onclick="product.modal(event)">delete</buttton>
+                                <button class="delete-btn" data-id=${product._id} onclick="product.modal(event)">delete</buttton>
                             </div>
                         </div>
                     </div>

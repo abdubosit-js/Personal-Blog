@@ -104,7 +104,7 @@ class Auth extends App {
                         <a class="nav-link" href="addtodos.html">create Todo</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
+                <form class="d-flex" role="search" style="margin-left: auto;">
                 ${Boolean(localStorage.getItem("token")) ? `
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item" onclick="auth.logout()">
